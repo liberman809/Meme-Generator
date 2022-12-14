@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="style/helpers.css">
+
 </head>
-<body>
-    <script src="script/gallery/controller.js"></script>
+
+<body onload="galleryInit()"">
+
+    <header class=" main-header">
+    <nav>
+        <ul>
+            <li>edit memes</li>
+        </ul>
+    </nav>
+    </header>
+
+    <div class="contant">
+
+        <section class="gallery">
+
+            <div class="filter-memes">
+                <input type="text">
+            </div>
+    
+            <div class="memes-gallery"></div>
+
+        </section>
+
+        <section class="editor display-none">dsfds</section>
+        
+
+    </div>
+    <script src="script/memeController.js"></script>
+    <script src="script/gallery-controller.js"></script>
+    <script src="script/gallery-service.js"></script>
+
 </body>
+
 </html>
