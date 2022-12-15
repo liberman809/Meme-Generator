@@ -28,18 +28,72 @@
             <div class="filter-memes">
                 <input type="text">
             </div>
-    
+
             <div class="memes-gallery"></div>
 
         </section>
 
-        <section class="editor display-none">dsfds</section>
-        
+        <section class="editor display-none">
+
+
+            <canvas id="myCanvas" width="400" height="400"></canvas>
+
+            <div class="edit-area">
+
+                <h3>Edit text</h3>
+                <input type="text" onKeyUp="onEditText()" class="meme-text" placeholder="text">
+                <div class="editor-menu">
+                    <div class="first-menu">
+                        <button class="control-btn" onclick="onChangeLine('+')">▲</button>
+                        <button class="control-btn" onclick="onChangeLine('-')">▼</button>
+
+                        <button class="control-btn" onclick="onAddLine()"><img src="icons/add.png" class="img-btn"></button>
+                        <button class="control-btn" onclick="onDeliteLine()"><img src="icons/trash.png"
+                                class="img-btn"></button>
+                    </div>
+                    <!-- <img
+                    src="icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                    class="img-btn"> -->
+                    <div class="secend-menu">
+                        <button class="control-btn" onclick="onChangefontSize('+')"><img
+                                src="icons/increase font - icon.png" class="img-btn"></button>
+                        <button class="control-btn" onclick="onChangefontSize('-')"><img
+                                src="icons/decrease font - icon.png" class="img-btn"></button>
+                        <button class="control-btn" onclick="onSetAlign('start')"><img src="icons/align-to-left.png"
+                                class="img-btn"></button>
+                        <button class="control-btn" onclick="onSetAlign('center')"><img
+                                src="icons/center-text-alignment.png" class="img-btn"></button>
+                        <button class="control-btn" onclick="onSetAlign('end')"><img src="icons/align-to-right.png"
+                                class="img-btn"></button>
+
+                        <select name="fonts" class="fonts" onchange="onSetFont()">
+                            <option value="Impact">Impact</option>
+                            <option value="Brush Script MT">Brush Script MT</option>
+                            <option value="Andalé Mono">Andalé Mono</option>
+                            <option value="Ariel">Ariel</option>
+                        </select>
+
+                        <button class="control-btn" onclick="onSetStroke()"><img src="icons/text stroke.png"
+                                class="img-btn"></button>
+                        <input type="color" class="color-picer" onchange="onSetColor()">
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+
 
     </div>
+    <script src="script/memeService.js"></script>
     <script src="script/memeController.js"></script>
     <script src="script/gallery-controller.js"></script>
-    <script src="script/gallery-service.js"></script>
 
 </body>
 
