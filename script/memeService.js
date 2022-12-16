@@ -1,5 +1,6 @@
 
 var gImgs = []
+var gEmojis
 var gCurrLineEdit
 
 
