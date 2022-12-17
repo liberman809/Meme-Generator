@@ -2,5 +2,8 @@
 
 .display-none{
     display: none;
-    /* color: rgba(119, 176, 226, 0.39); */
+}
+
+.display-flex{
+    display: flex;
 }

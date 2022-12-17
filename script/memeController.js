@@ -4,83 +4,104 @@ var gCtx
 var imgId
 var memeImg
 var gMeme = {}
+var gCanvas
+var selectedLine
 
-function initEditor(imgId,memeImg) {
+function initEditor(imgId, memeImg) {
     changeSection()
-    gXPosition = 200
-    gYPosition = 100
-    gMeme = createMeme(imgId,memeImg)
-    gCurrLineEdit = 0
+    gMeme = createMeme(imgId, memeImg)
+    setOlaceOlder()
     setFont()
+    renderEmojis()
     renderMeme()
-
 }
+
 
 function changeSection() {
 
     document.querySelector('.gallery').classList.add("display-none")
-    document.querySelector('.editor').classList.remove("display-none")
+    document.querySelector('.editor').style.display = "flex"
 
+}
+
+function setOlaceOlder(){
+    document.querySelector('.meme-text').placeholder= gMeme.lines[gMeme.selectedLineIdx].txt
 }
 
 function renderMeme() {
     var meme =  gMeme.url
-    var canvas = document.getElementById("myCanvas")
-    gCtx = canvas.getContext("2d")
+    gCanvas = document.getElementById("myCanvas")
+    gCtx = gCanvas.getContext("2d")
     gCtx.drawImage(meme, 0, 0, 400, 400)
     renderLines()
 }
 
+
 function renderEmojis(){
-    var images = getEmojis()
+    var imj = getEmojiList()
     var strHtml = ''
-    images.forEach(emoj => {
-        strHtml += ` <img src="${img.url}" class="image" onclick= "initEditor(${img.id},this)">`
+    imj.forEach(emoj => {
+        strHtml += `<div class= "imj" onclick="onAddImj(${emoj.id})">${emoj.emj}</div>`
     })
 
-    document.querySelector('.memes-gallery').innerHTML = strHtml
+    document.querySelector('.stickers-menu').innerHTML = strHtml
 }
 
-function onEditText(){
+function onAddImj(emoj){
+    addEmoj(emoj)
+    renderMeme()
+}
+
+function onEditText() {
     editText()
     renderMeme()
 }
 
+
+
 function onChangefontSize(operator) {
     setFontSize(operator)
+    setNewPosition('y',operator)
     renderMeme()
 }
+
+function onSetNewPosition(axsis,operator){
+    setNewPosition(axsis,operator)
+    renderMeme()
+}
+
 
 function onSetAlign(direction) {
     setAlign(direction)
     renderMeme()
+    console.log(gMeme.lines[gMeme.selectedLineIdx].align)
 }
 
-function onSetStroke(){
+function onSetStroke() {
     setStroke()
     renderMeme()
 }
-function onSetColor(){
+function onSetColor() {
     setColor()
     renderMeme()
 }
 
-function onSetFont(){
+function onSetFont() {
     setFont()
     renderMeme()
 }
 
-function onAddLine(){
+function onAddLine() {
     addLine()
     renderMeme()
 }
 
-function onChangeLine(operator){
+function onChangeLine(operator) {
     changeLine(operator)
     renderMeme()
 }
 
-function onDeliteLine(){
+function onDeliteLine() {
     deliteLine()
     renderMeme()
 }
