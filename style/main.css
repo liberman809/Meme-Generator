@@ -4,7 +4,6 @@
 
 .grid-container {
     display: grid;
-    width: 100%;
     grid-template-columns: 100%;
     grid-template-rows: 15vh 80vh;
 
@@ -170,7 +169,7 @@ a:visited {
 }
 /* mediaQ */
 
-@media screen and (max-width: 1141px) {
+@media screen and (max-width: 1140px) {
 
     .main-menu{
         margin-right: 10px;
@@ -189,13 +188,20 @@ a:visited {
 
 @media screen and (max-width: 780px) {
 
-    .main-menu{
-        display: none;
+    .grid-container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10vh 90vh;
+    
+        grid-template-areas:
+            "header"
+            "main";
+    
     }
-    .main-btn{
-        margin: 5px;
-        height: 30px;
-        width: 110px;
+
+    .title{
+        font-size: 1em;
+        background-color: antiquewhite;
     }
     
     .main-header{
@@ -203,9 +209,11 @@ a:visited {
     }
     .editor{
         flex-direction: column;
+        width: 65vw;
+        margin-top: 150px;
     }
     .edit-area {
-        width: 66.8vh;
+        width: 65vw;
         margin: auto;
         margin-top: 20px;
     }
@@ -213,11 +221,8 @@ a:visited {
         width: 70%;
         
     }
-    .editor{
-        margin-top: 150px;
-    }
-    #myCanvas{
-        margin: auto;
+    canvas{
+       margin: auto;
         width: 400px;
         height: 300px;
     }
