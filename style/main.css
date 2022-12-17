@@ -186,12 +186,12 @@ a:visited {
     }
 
     .edit-area {
-        min-width: 70%;  
+        min-width: 80%;  
     }
 
     canvas{
         min-height: 60vh;
-        min-width: 70%;  
+        min-width: 80%;  
 
     }
 
