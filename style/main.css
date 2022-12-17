@@ -194,15 +194,16 @@ a:visited {
         align-items: center;
         width: 100%;
         margin-top: 180px;
+        box-sizing: border-box;
     }
 
     .edit-area {
-        min-width: 400px;  
+        min-width: 60vw;  
     }
 
     canvas{
-        min-height: 400px;
-        min-width: 400px;  
+        min-height: 60vh;
+        min-width: 60vw;  
 
     }
 
