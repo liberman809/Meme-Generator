@@ -13,6 +13,10 @@
 
 }
 
+body{
+    background-color: aliceblue;
+}
+
 h1 {
     color: aliceblue;
     font-size: 3.125rem;
@@ -29,6 +33,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .title {
